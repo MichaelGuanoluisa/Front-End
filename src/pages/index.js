@@ -116,17 +116,17 @@ export default News;
 */
 
 
-import Navbar  from "../components/Navbar";
 import Layout from "../components/Layout";
 
 import useUser from "../data/useUser";
+import Header from "../components/Header";
 
 const IndexPage = () => {
   const { user, loading, loggedIn } = useUser();
 
   const DisplayInfo = () => {
     if (loading) return <div className="container"> Loading... </div>;
-    if (loggedIn && user._id)
+    if (loggedIn && user._id){
       return (
         <div className="container">
           {" "}
@@ -134,11 +134,13 @@ const IndexPage = () => {
           Email: {user.email} <br />
         </div>
       );
+    }
 
     return <div className="container"> Login to get info </div>;
   };
   return (
     <Layout title="index">
+      <Header/>
       <DisplayInfo />
     </Layout>
   );

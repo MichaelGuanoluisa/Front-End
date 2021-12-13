@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from "../../styles/cards.module.css";
-const url = "https://backend-ifgf.herokuapp.com/";
+import { URL } from "../../variable";
 import api from "../api/api";
 
 
@@ -17,7 +17,7 @@ const News = ({news}) => {
                     <div key={item.id} className={styles.course}>
                         <div   className={styles.coursecontenido}>
                         <div justifyContent="center" className={styles.name}>{item.title}</div>
-                        <div><img src={url+item.imgURL} width={210} height={170}  justifyContent="center" className={styles.imgN}/></div>
+                        <div><img src={URL+item.imgURL} width={210} height={170}  justifyContent="center" className={styles.imgN}/></div>
                         <div className={styles.description}>{item.description}</div>
                   
                     </div>

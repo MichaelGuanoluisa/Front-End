@@ -22,7 +22,7 @@ export const login = async ({ email, password }) => {
 export const getUser = async () => {
   try {
     token = localStorage.getItem("token")
-    await axios.get(`${API_URL}/api/auth/user/${token}`).then(res => {
+    await axios.get(`${API_URL}/auth/user/${token}`).then(res => {
       console.log(res.data)
       return res.data;
       
@@ -38,7 +38,7 @@ export const getUser = async () => {
 
 export const logout = async () => {
   try {
-    await axios.get(`${API_URL}/api/auth/logout`);
+    await axios.get(`${API_URL}/auth/logout`);
     
     if (typeof window !== "undefined") {
 
